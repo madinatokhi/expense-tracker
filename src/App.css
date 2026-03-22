@@ -3,13 +3,15 @@ body {
   background: #f4f6f8;
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .container {
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   background: white;
   padding: 20px;
-  margin-top: 50px;
+  margin: 30px auto;
   border-radius: 12px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -22,22 +24,24 @@ form {
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
 input {
-  flex: 1;
-  padding: 8px;
+  flex: 1 1 100%;
+  padding: 10px;
   border-radius: 6px;
   border: 1px solid #ccc;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 10px;
   border: none;
   background: #4CAF50;
   color: white;
   border-radius: 6px;
   cursor: pointer;
+  flex: 1 1 100%;
 }
 
 button:hover {
@@ -47,9 +51,29 @@ button:hover {
 li {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   margin: 8px 0;
+  gap: 5px;
 }
 
 li button {
   background: red;
+  padding: 5px 8px;
+}
+
+/* 📱 Responsive */
+@media (min-width: 600px) {
+  form {
+    flex-wrap: nowrap;
+  }
+
+  input {
+    flex: 1;
+  }
+
+ button {
+    flex: 0 0 auto; 
+    padding: 10px 20px;
+  }
 }
